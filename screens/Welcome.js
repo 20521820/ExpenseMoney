@@ -9,7 +9,7 @@ export default function Welcome() {
       </Text>
       <Image
         style={styles.logo}
-        source={require('/assets/img/logo/J.gif')} />
+        source={require('./../assets/img/logo/J.gif')} />
     </View>
   );
 }
