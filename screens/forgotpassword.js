@@ -1,17 +1,25 @@
-import React, {useState} from 'react';
-import { Text, View, StyleSheet, TextInput, Button, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-export default function ForgotPassword () {
+export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Forgot Password
+      <View style={styles.title}>
+        <AntDesign name="arrowleft" size={25} color="black" />
+        <Text style={styles.paragraph}>Forgot Password</Text>
+      </View>
+      <Text style={styles.tex}>Don’t worry. </Text>
+      <Text style={[styles.tex, { marginBottom: 30 }]}>
+        Enter your email and we’ll send you a link to reset your password.
       </Text>
-      <Text style={styles.tex}>
-        Don’t worry. </Text>
-      <Text  style={[styles.tex, {marginBottom: 30}]}>
-        Enter your email and we’ll send you a link to reset your password.</Text>
       <TextInput
         style={styles.box}
         name="Email"
@@ -40,11 +48,11 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   paragraph: {
-    margin: 20,
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
     paddingBottom: 50,
+    width: '90%',
   },
   box: {
     borderColor: 'gray',
@@ -68,5 +76,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     textAlign: 'center',
     fontSize: 15,
+  },
+  title: {
+    flexDirection: 'row',
   },
 });
