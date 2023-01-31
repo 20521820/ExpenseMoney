@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
 
@@ -18,7 +19,10 @@ export default function Login() {
   const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>Login</Text>
+      <View style={styles.title}>
+        <AntDesign name="arrowleft" size={25} color="black" />
+        <Text style={styles.paragraph}>Login</Text>
+      </View>
       <TextInput
         style={styles.box}
         name="Email"
@@ -58,11 +62,12 @@ export default function Login() {
           styles.Button,
           { backgroundColor: 'white', borderRadius: 10, borderColor: 'gray' },
         ]}>
-        <Text style={[styles.buttonText, { color: 'black', fontWeight: 'bold' }]}>
+        <Text
+          style={[styles.buttonText, { color: 'black', fontWeight: 'bold' }]}>
           Forgot password?
         </Text>
       </TouchableOpacity>
-    <TouchableOpacity
+      <TouchableOpacity
         style={[
           styles.Button,
           { backgroundColor: 'white', borderRadius: 10, borderColor: 'gray' },
@@ -87,6 +92,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     paddingBottom: 20,
+    width: '90%'
   },
   box: {
     borderColor: 'gray',
@@ -122,5 +128,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 10,
+  },
+  title: {
+    flexDirection: 'row',
   },
 });
