@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
 export default function Signup() {
@@ -51,20 +52,32 @@ export default function Signup() {
         </Pressable>
       </View>
       <TouchableOpacity
-        style={[styles.Button, { backgroundColor: '#00A86B', borderRadius: 10, padding: 5}]}
-      >
-        <Text style={[styles.buttonText, {color: 'white', fontWeight: 'bold'}]}>SIGN UP</Text>
+        style={[
+          styles.Button,
+          { backgroundColor: '#00A86B', borderRadius: 10, padding: 5 },
+        ]}>
+        <Text
+          style={[styles.buttonText, { color: 'white', fontWeight: 'bold' }]}>
+          SIGN UP
+        </Text>
       </TouchableOpacity>
       <Text style={styles.tex}> Or with </Text>
       <TouchableOpacity
-        style={[styles.Button, { backgroundColor: 'white', borderRadius: 10}]}
-      >
-        <Text style={[styles.buttonText, {color: 'black', fontWeight: 'bold'}]}>Sign Up with Google</Text>
+        style={[styles.Button, { backgroundColor: 'white', flexDirection: 'row'}]}>
+        <Ionicons style={styles.icons} name="logo-google" size={22} color="black" />
+        <Text
+          style={[styles.buttonText, { color: 'black', fontWeight: 'bold', width: '60%' }]}>
+          Sign Up with Google
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.Button, { backgroundColor: 'white', borderRadius: 10, borderColor: 'gray'}]}
-      >
-        <Text style={[styles.buttonText, {color: 'black'}]}>Already have an account? Login</Text>
+        style={[
+          styles.Button,
+          { backgroundColor: 'white', borderRadius: 10, borderColor: 'gray' },
+        ]}>
+        <Text style={[styles.buttonText, { color: 'black' }]}>
+          Already have an account? Login
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -123,6 +136,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 10,
     marginBottom: 10,
+  },
+  icons: {
+    marginLeft: 50,
   }
-
 });
