@@ -87,11 +87,10 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   paragraph: {
-    margin: 20,
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingBottom: 20,
+    paddingBottom: 50,
     width: '90%'
   },
   box: {
