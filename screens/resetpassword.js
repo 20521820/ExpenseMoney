@@ -1,14 +1,22 @@
-import React, {useState} from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-export default function ResetPassword () {
+export default function ResetPassword() {
   const [newpassword, setNewPassword] = useState('');
   const [retypepasswosrd, setRetypePassword] = useState('');
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Reset Password
-      </Text>
+      <View style={styles.title}>
+        <AntDesign name="arrowleft" size={25} color="black" />
+        <Text style={styles.paragraph}>Reset Password</Text>
+      </View>
       <TextInput
         style={styles.box}
         name="New password"
@@ -44,11 +52,11 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   paragraph: {
-    margin: 20,
     fontSize: 25,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingBottom: 20,
+    paddingBottom: 50,
+    width: '90%',
   },
   box: {
     borderColor: 'gray',
@@ -68,5 +76,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     textAlign: 'center',
     fontSize: 15,
+  },
+  title: {
+    flexDirection: 'row',
   },
 });
